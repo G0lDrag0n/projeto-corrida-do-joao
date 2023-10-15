@@ -25,7 +25,7 @@ function setup(){
 //crie um sprite de menino
 boy= createSprite(200, 200, 20, 60)
 //adicione uma animação de corrida para ele
-boy.addAnimation("Runner-1.png", "Runner-2.png", running)
+boy.addAnimation("Runner-1.png", "Runner-2.png","Runner-1.png", running)
 boy.scale=0.08;
   
 //crie um limite à esquerda
@@ -41,9 +41,9 @@ rightBoundary.visible= false
 function draw() {
   background(0);
   path.velocityY = 4;
-  
+  boy.x=World.mouseX
   // mover o menino com o mouse usando mouseX
-  boyX = mouseX
+  
   edges= createEdgeSprites();
   boy.collide(edges[3]);
   // colidir o menino com os limites invisíveis da esquerda e da direita
